@@ -142,17 +142,6 @@ The program generates two files:
 By default, output filenames are automatically generated based on the domain and path of the webpage.
 When using the `--with-date` option, the date is added to the filename.
 
-## License
-
-This project is licensed under the MIT No Attribution License (MIT-0). See the [LICENSE](./LICENSE) file for details.
-
-The MIT-0 license allows you to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software without attribution requirements.
-
-## Issues & Improvements
-
-- To add support for a new website, create a new scraper class in the `src/scrapers/` directory and register it in `scraper-factory.ts`.
-- If there's a version mismatch between ChromeDriver and Chrome browser, install the appropriate version of ChromeDriver.
-
 ## Environment Preparation Notes
 
 ### ChromeDriver and Chrome Browser Compatibility
@@ -179,3 +168,14 @@ The MIT-0 license allows you to use, copy, modify, merge, publish, distribute, s
   webdriver-manager start --detach
   ```
 - This command launches WebDriver in the background, allowing Selenium to control the browser.
+
+## Issues & Improvements
+
+- To add support for a new website, create a new scraper class in the `src/scrapers/` directory and register it in `scraper-factory.ts`.
+- If there's a version mismatch between ChromeDriver and Chrome browser, install the appropriate version of ChromeDriver.
+
+## License
+
+This project is licensed under the MIT No Attribution License (MIT-0). See the [LICENSE](./LICENSE) file for details.
+
+The MIT-0 license allows you to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software without attribution requirements.
