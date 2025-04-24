@@ -152,3 +152,30 @@ The MIT-0 license allows you to use, copy, modify, merge, publish, distribute, s
 
 - To add support for a new website, create a new scraper class in the `src/scrapers/` directory and register it in `scraper-factory.ts`.
 - If there's a version mismatch between ChromeDriver and Chrome browser, install the appropriate version of ChromeDriver.
+
+## Environment Preparation Notes
+
+### ChromeDriver and Chrome Browser Compatibility
+
+- The `chromedriver` version in `package.json` `dependencies` must match your installed Chrome browser version.
+- If there's a version mismatch, either update the `chromedriver` version in `package.json` and run `npm install`, or update your Chrome browser to the appropriate version.
+
+### Japanese Font Support
+
+- When scraping content with Japanese text, your environment must have Japanese fonts installed to avoid character rendering issues.
+- For Linux, install Japanese fonts with the following commands:
+  ```bash
+  # For Ubuntu/Debian
+  sudo apt-get install fonts-ipafont fonts-ipaexfont
+  
+  # For CentOS/RHEL/Fedora
+  sudo dnf install google-noto-sans-japanese-fonts
+  ```
+
+### WebDriver Setup
+
+- Some environments may require explicitly starting the WebDriver:
+  ```bash
+  webdriver-manager start --detach
+  ```
+- This command launches WebDriver in the background, allowing Selenium to control the browser.

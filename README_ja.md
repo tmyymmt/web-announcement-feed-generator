@@ -152,3 +152,30 @@ MIT-0ライセンスでは、帰属表示の要件なしにソフトウェアの
 
 - 新しいWebサイトへの対応を追加する場合は、`src/scrapers/`ディレクトリに新たなスクレイパークラスを作成し、`scraper-factory.ts`に登録する必要があります。
 - ChromeDriverのバージョンとChromeブラウザのバージョンの不一致が発生した場合は、適切なバージョンのChromeDriverをインストールしてください。
+
+## 環境準備の注意点
+
+### ChromeDriverとChromeブラウザの互換性
+
+- `package.json`の`dependencies`の`chromedriver`のバージョンと、インストールされているChromeブラウザのバージョンを合わせる必要があります。
+- バージョンの不一致がある場合は、`package.json`内の`chromedriver`のバージョン指定を更新して`npm install`を実行するか、Chromeブラウザを適切なバージョンに更新してください。
+
+### 日本語フォント対応
+
+- スクレイピング対象に日本語が含まれている場合、実行環境に日本語フォントがインストールされていないと文字化けが発生する可能性があります。
+- Linuxの場合は以下のコマンドで日本語フォントをインストールしてください：
+  ```bash
+  # Ubuntu/Debianの場合
+  sudo apt-get install fonts-ipafont fonts-ipaexfont
+  
+  # CentOS/RHEL/Fedoraの場合
+  sudo dnf install google-noto-sans-japanese-fonts
+  ```
+
+### WebDriverの準備
+
+- 環境によっては明示的にWebDriverを起動する必要がある場合があります：
+  ```bash
+  webdriver-manager start --detach
+  ```
+- このコマンドはバックグラウンドでWebDriverを起動し、Seleniumがブラウザを制御できるようにします。
