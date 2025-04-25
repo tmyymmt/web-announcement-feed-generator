@@ -1,6 +1,6 @@
-# Web Announcement Feed Generator
+# Web Announcement Feed Generator TypeScript
 
-A CLI tool that scrapes announcement information from specified webpages and converts them to RSS 2.0 feeds and CSV files.
+A CLI tool that scrapes announcement information from specified web pages and converts it to RSS 2.0 feed and CSV files.
 
 ## Features
 
@@ -20,12 +20,12 @@ A CLI tool that scrapes announcement information from specified webpages and con
 
 ## Development
 
-### Setting up the development environment
+### Development Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/web-announcement-feed-generator.git
-cd web-announcement-feed-generator
+git clone https://github.com/yourusername/web-announcement-feed-generator-typescript.git
+cd web-announcement-feed-generator-typescript
 ```
 
 2. Install dependencies:
